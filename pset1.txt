@@ -1,0 +1,72 @@
+<html>
+
+<head>
+      <title>About Jared Mitchell</title>
+</head>  
+
+<body>
+      <h1>Jared Mitchell</h1> <hr / >
+      <p>I decided to take this course this summer because I wanted to learn more 
+            about Web Programming. I don't have any experience with web programming
+            and I have taken a few CS classes at Tufts so far. I'm looking forward
+            to expanding my knowledge and skill in the world of programming.</p> <br />
+      
+      <h3>Three Favorite Foods</h3>
+      <ul>
+		<li>Macoroni & Cheese</li>
+            <li>Salad</li>
+            <li>Pizza</li>
+	</ul> <br />
+      
+      <h3>Favorite Restaurant</h3>
+      <a href="https://www.panerabread.com/en-us/home.html">Panera Bread</a>
+      <p>I like Panera Bread because the food taste fresh and it's healthy.</p> <br />
+      
+      <h3>Favorite Food</h3>
+      <img src='images/FavFood.png' align='left' width='200'>
+      I like Macoroni and Cheese because it taste really good. I like to eat it 
+      baked with different styles of cheese incorporated.
+	
+      <br clear="all" /> <br />
+      
+      <h3>Favorite Books</h3>
+      <table border = "1" cellpadding="4" cellspacing="5">
+		<tr>
+			<th>Book Name</th>
+			<th>Cover</th>
+			<th>Author</th>
+			<th>Summary</th>
+		</tr>
+		<tr>
+			<td>The Blind Kingdom</td>
+			<td><img src='images/Book1.png' align='left' width='200'></td>
+			<td>Véronique Tadjo</td>
+			<td>A kingdom that is ruled by a blind king suffers as some people <br />
+                        with the ability to see fight to free it.</td>
+		</tr>
+		<tr>
+                  <td>Eragon</td>
+			<td><img src='images/Book2.png' align='left' width='200'></td>
+			<td>Christopher Paolini</td>
+			<td>A young boy discoveries a dragon egg. After the egg hatches, <br />
+                  he is thrown into a war with magic and mythical creatures.</td>
+		</tr>
+            <tr>
+                  <td>Crispin</td>
+			<td><img src='images/Book3.png' align='left' width='200'></td>
+			<td>Avi</td>
+			<td>A peasant boy is suddenly under chase by soldiers after his mother
+                  passes away. <br />The reason for his pursuit is hidden within the truth 
+                  of his identity.</td>
+		</tr>
+            <tr>
+                  <td>Diary of a Whimpy Kid</td>
+			<td><img src='images/Book4.png' align='left' width='200'></td>
+			<td>Jeff Kinney</td>
+			<td>Greg Heffley navigates life with his friend Rowley facing
+                  challenges <br /> like school, girls, bullies, and family.</td>
+		</tr>
+	</table> <br /> <br />
+</body>
+
+</html>
