@@ -1,38 +1,34 @@
+<!doctype html>
 <html>
 <head>
-<title>Table Demo</title>
-	<style type="text/css">
-		tr:nth-child(even) {background-color: #CCC;}
-	</style>
+<title>Form Demo</title>
 </head>
-
 <body>
-    <h1>Table Demo</h1>
-	<table border = "1" cellpadding="4" cellspacing="5">
-		<tr>
-			<th>col 1</th>
-			<th>col 2</th>
-			<th>col 3</th>
-			<th>&nbsp;</th>
-		</tr>
-		<tr>
-			<td>row 1 col 1- this has extra content</td>
-			<td>row 1 col 2</td>
-			<td>row 1 col 3</td>
-			<td>row 1 col 4</td>
-		</tr>
-		<tr>
-			<td>row 2 col 1</td>
-			<td>row 2 col 2 <br /> this cell is taller than the others</td>
-			<td>row 2 col 3</td>
-			<td>&nbsp;</td>
-		</tr>
-            <tr>
-			<td>row 2 col 1</td>
-			<td>row 2 col 2 <br /> this cell is taller than the others</td>
-			<td>row 2 col 3</td>
-			<td>&nbsp;</td>
-		</tr>
-	</table>
+    <h1>Form Demo</h1>
+	<form action='#' method='get'>
+	<label>Name:</label> <input type="text" name='name' id='the_name'>
+	<br /><br />
+	Age: <input type = "number">
+	<br /><br />
+	Fav color (pick one): 
+		<input type="radio" name="color" value="blue">Blue
+		<input type="radio" name="color" value="red">Red
+		<input type="radio" name="color" value="purple">Purple
+    <br /><br />
+	Favorite color (drop down list):
+		<select name="favColor">
+		<option value="blue">Blue</option>
+		<option value="red">Red</option>
+		<option value="purple">Purple</option></select>
+    <br /><br />
+	Favorite snacks (pick all that apply):
+		<input type="checkbox" name="chkPotChip" value="potato_chip">Potato Chips
+		<input type="checkbox" name="chkPretzel" value="pretzels">Pretzels
+		<input type="checkbox" name="chkPopcorn" value="popcorn">Popcorn
+    <br /><br />	
+	
+	<input type = "submit" value = "Go!">
+	
+	</form>
 </body>
 </html>
