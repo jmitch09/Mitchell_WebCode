@@ -30,16 +30,12 @@
                   align: center;
             }
             
-            .social {
-                  position:fixed;
-                  top:100px;
-                  right:30px;
+            img src { 
+                  position: relative;
+                  right: 30px;
+                  top: 100px;
             }
             
-            label {
-                  display:inline-block;
-                  width: 150px;
-            }
             
             
             tr:nth-child(even) {background-color: #eea;}
@@ -48,11 +44,11 @@
 
 <body>
       <h1>Jared Mitchell</h1> <hr / >
-      <div class="social">
+      
       <img src='images/facebook.png' align='left' width='50'>
       
       <img src='images/twitter.png' align='left' width='50'>
-</div>
+      <br /> <br /> <br />
       
       <p>I decided to take this course this summer because I wanted to learn more 
             about Web Programming. I don't have any experience with web programming
@@ -128,19 +124,16 @@
       
       <form action='#' method='get' align='left'>
             
-	<label>First Name:</label>
-      <input type="text" name='firstName' id='first_name'>
+	<label>First Name:</label> <input type="text" name='firstName' id='first_name'>
 	<br /><br />
       
-      <label>Last Name:</label>
-      <input type="text" name='lastName' id='last_name'>
+      <label>Last Name:</label> <input type="text" name='lastName' id='last_name'>
 	<br /><br />
       
-      <label>City:</label>
-      <input type="text" name='city' id='city_name'>
+      <label>City:</label> <input type="text" name='city' id='city_name'>
 	<br /><br />
       
-      <label>State:</label>
+      State:
 		<select name="state">
             <option value="#">Select a state</option>
 		<option value="Alabama">AL</option>
