@@ -1,39 +1,36 @@
 <!doctype html>
 <html>
 <head>
-<title>Form Demo</title>
+<meta charset="utf-8">
+<title>JS Basics</title>
 </head>
+
 <body>
-    <h1>Form Demo</h1>
-	<form action='#' method='get'>
-            
-	<label>Name:</label> <input type="text" name='name' id='the_name'>
-	<br /><br />
-      
-	Age: <input type = "number">
-	<br /><br />
-      
-	Fav color (pick one): 
-		<input type="radio" name="color" value="blue">Blue
-		<input type="radio" name="color" value="red">Red
-		<input type="radio" name="color" value="purple">Purple
-    <br /><br />
-    
-	Favorite color (drop down list):
-		<select name="favColor">
-		<option value="blue">Blue</option>
-		<option value="red">Red</option>
-		<option value="purple">Purple</option></select>
-    <br /><br />
-    
-	Favorite snacks (pick all that apply):
-		<input type="checkbox" name="chkPotChip" value="potato_chip">Potato Chips
-		<input type="checkbox" name="chkPretzel" value="pretzels">Pretzels
-		<input type="checkbox" name="chkPopcorn" value="popcorn">Popcorn
-    <br /><br />	
-	
-	<input type = "submit" value = "Go!">
-	
-	</form>
+    <h1>JS Demo</h1>
+    <div id="area1">abc</div>
+    <!-- javascript code is enclosed in <script> tags -->
+    <script>
+      document.write("hey<br />");    // write to page
+      alert("This is a popup");       //popup
+                                      //write to element on page
+      document.getElementById("area1").innerHTML = "hello";  
+
+      x = 100;                        // declare a variable using assignment or var/let
+      var y = 101;
+      let z = 102;
+      const w = 103;
+      document.write (x);
+      document.write("<br />");
+      document.write("y is " + y + "<br />");
+      console.log("z is "+ z)
+     // w = 104;
+
+      age = prompt ("how old are you?", "0"); //second param is the default val
+      if (! isNaN(age))   //result of prompt is a string- check if it is numeric
+      {
+        next = parseInt(age) + 1;            
+        document.write ("Next year you will be " + next + " years old <br />");
+      }
+    </script>
 </body>
 </html>
