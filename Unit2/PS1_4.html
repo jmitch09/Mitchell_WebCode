@@ -9,20 +9,21 @@
         <script>
             var num1 = prompt ("Enter a number");
             var num2 = prompt ("Enter a number");
-            document.write(num1 + " " + num2)
-            var i = num1;
+            document.write(num1 + " " + num2 + "<br />")
+            var i = parseInt(num1);
             var sum = 0;
             if (num1 == num2) {
                 document.write(i + " ");
             } else {
                 while (i < num2) {
-                    document.write("running loop <br />")
+                   // i = parseInt(i)  
+                    console.log("running loop <br />")
                     if (i%2 != 0) {
-                        document.write("is odd <br />")
+                        console.log("is odd <br />")
                         sum += i;
                         document.write(i + " ");
                     } else {
-                        document.write("is even <br />")
+                        console.log("is even <br />")
                         sum += i;
                         i++;
                         document.write(i + " ");
