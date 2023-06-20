@@ -2,35 +2,76 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>JS Basics</title>
+<title>JS Functions</title>
+<style type="text/css">
+.item {width: 110px; display:inline-block;}
+.price {width: 100px; display:inline-block;  text-align:right}
+</style>
 </head>
-
 <body>
-    <h1>JS Demo</h1>
-    <div id="area1">abc</div>
-    <!-- javascript code is enclosed in <script> tags -->
     <script>
-      document.write("hey<br />");    // write to page
-      alert("This is a popup");       //popup
-                                      //write to element on page
-      document.getElementById("area1").innerHTML = "hello";  
+         const HDprice = 3;
+         const FFprice = 2.5;
+         const SDprice = 2;
+        function showPrice(price)
+        {
+            fprc = price.toFixed(2);
+            return '$ ' + fprc;
+        }
+        function displayMenu()
+        {
+            document.write("<div class='item'>1. Hotdogs</div>")
+            document.write("<div class='price'>"+ showPrice(HDprice) +"</div>")
+            document.write ("<br />");
+            document.write("<div class='item'>2. French Fries </div>")
+            document.write("<div class='price'>"+ showPrice(FFprice) +"</div>")
+            document.write ("<br />");
+            document.write("<div class='item'>3. Soda</div>")
+            document.write("<div class='price'>"+ showPrice(SDprice) +"</div>")
+        }
 
-      x = 100;                        // declare a variable using assignment or var/let
-      var y = 101;
-      let z = 102;
-      const w = 103;
-      document.write (x);
-      document.write("<br />");
-      document.write("y is " + y + "<br />");
-      console.log("z is "+ z)
-     // w = 104;
+        function getItem()
+        {
+            order = 0;
+            while(true)
+            {
+                order =prompt ("Enter the number of the item or STOP to complete your order", "STOP")
+                if (order.toUpperCase() == "STOP") 
+                {
+                    order =0;
+                    break;
+                }
+                order = parseInt(order);
+                if (order >= 1 && order <= 3)
+                    break;
+                else 
+                    alert("Invalid entry - try again");
+            }
+            return order;
+        }
 
-      age = prompt ("how old are you?", "0"); //second param is the default val
-      if (! isNaN(age))   //result of prompt is a string- check if it is numeric
-      {
-        next = parseInt(age) + 1;            
-        document.write ("Next year you will be " + next + " years old <br />");
-      }
+        function order()
+        {
+            hotdog =fries= soda = 0
+            while (item = getItem()) // false for stop
+            {
+                switch (item)
+                {
+                    case 1: hotdog++; break
+                    case 2: fries++; break
+                    case 3: soda++; break
+                }
+            }
+            s = "Your Order\n";
+            s+= hotdog + " Hotdogs \n";
+            s+=fries + " Fries \n";
+            s+=soda + " Soda\n";
+            alert(s);
+        }
+
+        displayMenu();
     </script>
+    <hr />
+    <button onclick="order()">Place Order</button>
 </body>
 </html>

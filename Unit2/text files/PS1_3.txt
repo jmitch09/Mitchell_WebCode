@@ -1,0 +1,20 @@
+<html>
+
+    <head>
+        <title>Problem 3</title>
+    </head>
+
+    <body>
+        <h1>Problem 3</h1>
+        <script>
+            num1 = prompt ("Enter a number")
+            num2 = prompt ("Enter a number")
+            if (num1 < num2) {
+                document.write(num1 + " " + num2)
+            } else {
+                document.write(num2 + " " + num1)
+            }
+        </script>
+    </body>
+    
+</html>

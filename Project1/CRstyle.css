@@ -1,0 +1,36 @@
+
+.menu {
+    text-align: center;
+    background-color: goldenrod;
+    margin: 0%;
+    padding: 50px 50px 50px;
+    font: menu;
+    font-family: 'Papyrus', fantasy !important;
+}
+
+.page {
+    text-align:center;
+    color:goldenrod;
+    font-family: 'Papyrus', fantasy !important;
+} 
+
+body {
+    font-family: 'Garamond', serif;
+}
+
+div a {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: medium;
+    color: white;
+}
+
+h2 {
+    font-family: 'Papyrus', fantasy !important;
+}
+
+p {
+    font-size: larger;
+    color:goldenrod;
+    font: bolder;
+}

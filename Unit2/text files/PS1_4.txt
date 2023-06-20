@@ -1,0 +1,39 @@
+<html>
+
+    <head>
+        <title>Problem 4</title>
+    </head>
+
+    <body>
+        <h1>Problem 4</h1>
+        <script>
+            var num1 = prompt ("Enter a number");
+            var num2 = prompt ("Enter a number");
+            document.write(num1 + " " + num2 + "<br />")
+            var i = parseInt(num1);
+            var sum = 0;
+            if (num1 == num2) {
+                document.write(i + " ");
+            } else {
+                while (i < num2) {
+                   // i = parseInt(i)  
+                    console.log("running loop <br />")
+                    if (i%2 != 0) {
+                        console.log("is odd <br />")
+                        sum += i;
+                        document.write(i + " ");
+                    } else {
+                        console.log("is even <br />")
+                        sum += i;
+                        i++;
+                        document.write(i + " ");
+                        sum += i
+                    };
+                    i++;
+                }
+            }
+           document.write("<br />Sum is " + sum);
+        </script>
+    </body>
+    
+</html>

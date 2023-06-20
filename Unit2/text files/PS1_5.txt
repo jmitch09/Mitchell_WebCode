@@ -1,0 +1,20 @@
+<html>
+
+    <head>
+        <title>Problem 5</title>
+    </head>
+
+    <body>
+        <h1>Problem 5</h1>
+        <script>
+            num = prompt ("Enter a number")
+            i = 1
+            while (i != 13) {
+                ans = num*i
+                document.write(num + " x " + i + " = " + ans + "<br />")
+                i++
+            }
+        </script>
+    </body>
+    
+</html>

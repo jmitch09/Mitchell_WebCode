@@ -1,20 +1,68 @@
-<html>
-    
+<html> 
     <head>
-        <title>BAND NAME</title>
+        <title>Catching Roses</title>
+        <link rel="stylesheet" href="CRstyle.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            label {
+                display:inline-block;
+                width: 200px;
+                margin-top:10px;
+            }
+            
+            input {
+                margin-bottom: 10px;
+            }
+
+            textarea {
+                margin-bottom: 10px;
+                resize: none;
+            }
+            
+        </style>
     </head>
 
     <body>
         <!--make consistent and run along top like menu-->
-        <a href="mainPage.html">Home</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="about.html">About Us</a>
-        <a href="players.html">The Players</a>
-        <h1>Contact Us</h1>
-<!--form to collect contact info and maybe send email or message-->
-        <form>
+        <div class= "menu">
+            <a href="mainPage.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="players.html">The Players</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
 
-        </form>
+        <div>
+            <h1 class="page">Contact Us</h1>
+            <p>Discover the magic of Catching Roses and let us create the soundtrack to your love story. Contact us today to discuss your wedding and see how we can make your dreams come true through the power of music.</p>
+        </div>
+<!--form to collect contact info and maybe send email or message-->
+        <div>
+            <form action='#' method='get' align='left' style="color:goldenrod;">
+                <label>Name</label> <br />
+                <input type="text" name='name' id='name' placeholder="Your Name">
+                <br />
+
+                <label>Phone Number</label> <br />
+                <input type="text" name='cell' id='cell' placeholder="Your Number">
+                <br />
+
+                <label>Email</label> <br />
+                <input type="text" name='email' id='email' placeholder="Your Email">
+                <br />
+
+                <label>Reason For Reaching Out</label> <br />
+                <input style="width:300px; height: 30px" type="text" name='subject' id='subject' placeholder="Reason for reaching out">
+                <br />
+
+                <label>Message</label> <br />
+                <textarea style="width:500px; height:100px" type="text" name='message' id='message' placeholder="Your Message..."></textarea>
+                <br />
+
+                <div style="text-align: center;">
+                    <input type = "submit" value = "Submit">
+                </div>
+            </form>
+        </div>
     </body>
 
 </html>
