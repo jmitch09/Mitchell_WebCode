@@ -2,76 +2,37 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>JS Functions</title>
-<style type="text/css">
-.item {width: 110px; display:inline-block;}
-.price {width: 100px; display:inline-block;  text-align:right}
-</style>
+<title>JSON Pet Object</title>
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
+	crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		body,html {font-size: 24px;}
+		li {font-size: 30px}
+	</style>
 </head>
+
 <body>
-    <script>
-         const HDprice = 3;
-         const FFprice = 2.5;
-         const SDprice = 2;
-        function showPrice(price)
-        {
-            fprc = price.toFixed(2);
-            return '$ ' + fprc;
-        }
-        function displayMenu()
-        {
-            document.write("<div class='item'>1. Hotdogs</div>")
-            document.write("<div class='price'>"+ showPrice(HDprice) +"</div>")
-            document.write ("<br />");
-            document.write("<div class='item'>2. French Fries </div>")
-            document.write("<div class='price'>"+ showPrice(FFprice) +"</div>")
-            document.write ("<br />");
-            document.write("<div class='item'>3. Soda</div>")
-            document.write("<div class='price'>"+ showPrice(SDprice) +"</div>")
-        }
+	<script language="javascript">
+	$.get( "https://ldiorio.github.io/demo28/animals.json", 
+			function( data ) {
+				console.log('raw data\n'+ data)
+				str = JSON.stringify(data);		//data is a json object
+				document.getElementById('json-data').innerHTML = str;
+				console.log('string data\n'+ str)
 
-        function getItem()
-        {
-            order = 0;
-            while(true)
-            {
-                order =prompt ("Enter the number of the item or STOP to complete your order", "STOP")
-                if (order.toUpperCase() == "STOP") 
-                {
-                    order =0;
-                    break;
-                }
-                order = parseInt(order);
-                if (order >= 1 && order <= 3)
-                    break;
-                else 
-                    alert("Invalid entry - try again");
-            }
-            return order;
-        }
-
-        function order()
-        {
-            hotdog =fries= soda = 0
-            while (item = getItem()) // false for stop
-            {
-                switch (item)
-                {
-                    case 1: hotdog++; break
-                    case 2: fries++; break
-                    case 3: soda++; break
-                }
-            }
-            s = "Your Order\n";
-            s+= hotdog + " Hotdogs \n";
-            s+=fries + " Fries \n";
-            s+=soda + " Soda\n";
-            alert(s);
-        }
-
-        displayMenu();
-    </script>
-    <hr />
-    <button onclick="order()">Place Order</button>
+				str = "<ul>";
+				data.forEach(function(animal) { 
+				str += "<li>" 
+					+ animal.name + " - " 
+					+ animal.type + "</li>";
+				}) 
+	str += "</ul>";
+	document.getElementById('json-list').innerHTML = str;  
+	})
+</script>
+	<div id="json-data">&nbsp;</div>
+	<div id="json-list">&nbsp;</div>
 </body>
 </html>

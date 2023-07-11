@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Problem 2</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Problem 2</h1>
+    <script>
+        $(document).ready(function() {
+            $.getJSON("prb2.json", function(data) {
+                console.log('raw data', data);
+                let str = '';
+
+                data.forEach(function(item) {
+                    str += "<ul>";
+                    str += "<li>Title: " + item.title + "</li>";
+                    str += "<li>Artist: " + item.artist + "</li>";
+                    str += "<li>Genre: " + item.genre + "</li>";
+                    str += "<li>Year: " + item.year + "</li>";
+                    str += "</ul>";
+                });
+
+                document.getElementById('json-list').innerHTML = str;
+            });
+        });
+    </script>
+    <div id="json-list">&nbsp;</div>
+</body>
+</html>
+

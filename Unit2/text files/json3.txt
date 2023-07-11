@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Genre Filter</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            var jsonData;
+
+            $.getJSON("prb2.json", function (data) {
+                jsonData = data;
+
+                var genreSelect = $("#genre-select");
+                jsonData.forEach(function (item) {
+                    genreSelect.append($('<option></option>').val(item.genre).text(item.genre));
+                });
+            });
+               
+                $("#filter-button").click(function () {
+                    var selectedGenre = genreSelect.val();
+                    var filteredSongs = jsonData.find(function (item) {
+                        return item.genre === selectedGenre;
+                    });
+
+                    var songTitles = filteredSongs ? filteredSongs.songs : [];
+
+                    var songList = $("#song-list");
+                    songList.empty();
+                    songTitles.forEach(function (song) {
+                        songList.append($('<li></li>').text(song));
+                    });
+                });
+            });
+    </script>
+</head>
+<body>
+    <h1>Problem 3</h1>
+    <form>
+        <label for="genre-select">Genre:</label>
+        <select id="genre-select"></select>
+        <button type="button" id="filter-button">Filter</button>
+    </form>
+    <ul id="song-list">&nbsp;</ul>
+</body>
+</html>

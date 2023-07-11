@@ -1,0 +1,65 @@
+[ 
+
+    {
+        "title": "Bohemian Rhapsody",
+        "artist": "Queen",
+        "genre": "Rock, Progressive Rock",
+        "year": "1975"
+    },
+    
+    {
+        "title": "Shape of You",
+        "artist": "Ed Sheeran",
+        "genre": "Pop, Reggae Fusion",
+        "year": "2017"
+    },
+    {
+        "title": "Uptown Funk",
+        "artist": "Mark Ronson ft. Bruno Mars",
+        "genre": "Funk, Pop",
+        "year": "2014"
+    },
+    {
+        "title": "Take Me to Church",
+        "artist": "Hozier",
+        "genre": "Indie Rock, Blues",
+        "year": "2013"
+    },
+    {
+        "title": "Despacito",
+        "artist": "Luis Fonsi ft, Daddy Yankee",
+        "genre": "Reggaeton, Pop",
+        "year": "2017"
+    },
+    {
+        "title": "Rolling in the Deep",
+        "artist": "Adele",
+        "genre": "Soul, Pop",
+        "year": "2010"
+    },
+    {
+        "title": "Hotline Bling",
+        "artist": "Drake",
+        "genre": "R&B, Pop",
+        "year": "2015"
+    },
+    {
+        "title": "Thinking Out Loud",
+        "artist": "Ed Sheeran",
+        "genre": "Pop, Soul",
+        "year": "2014"
+    },
+    {
+        "title": "Party in the USA",
+        "artist": "Miley Cyrus",
+        "genre": "Pop, Country",
+        "year": "2009"
+    },
+    {
+        "title": "Blurred Lines",
+        "artist": "Robin Thicke ft. T.I. and Pharrell Williams",
+        "genre": "R&B, Disco",
+        "year": "2013"
+    }
+
+]

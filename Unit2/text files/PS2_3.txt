@@ -3,7 +3,7 @@
     <script>
         function speak(prefix) {
             name = document.getElementById("name").value
-            alert(prefix + " " + name) 
+             
         }
     </script>
 </head>

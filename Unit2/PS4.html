@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Problem Set 4</title>
+    </head>
+    <body>
+        <h1>Problem Set 4</h1>
+        <script>
+            var holidys = new XMLHttpRequest()
+            if (!holidys) {alert("Error: Cant't create HTTP reqObj");}
+            data = "id:101"
+            holidys.onreadystatechange = function() {if (this.readyState==4 && this.status==200){var data=this.responseText; info =JSON.parse(data); console.log(info); space1 = document.getElementById('AJ');  var htmlContent = "<h2>2023 Holidays with AJAX</h2><ul>"; info.forEach(function(element) {htmlContent += "<li>" + element.localName + ", " + element.date + "</li>";}); htmlContent += "</ul>"; space1.innerHTML = htmlContent;} else {console.log('Error: ' + this.status)}}
+            holidys.open("GET", "https://date.nager.at/api/v3/publicholidays/2023/US", true) 
+            holidys.send(data)
+            
+            res = fetch("https://date.nager.at/api/v3/publicholidays/2023/US")
+                .then(res=>res.text())
+                .then(data=>{data = JSON.parse(data); console.log(data); space2 = document.getElementById('FE');  var htmlContent = "<h2>2023 Holidays with Fetch</h2><ul>"; info.forEach(function(element) {htmlContent += "<li>" + element.localName + ", " + element.date + "</li>";}); htmlContent += "</ul>"; space2.innerHTML = htmlContent;})
+        </script>
+        <div id="AJ">&nbsp;</div>
+        <div id="FE">&nbsp;</div>
+        
+        <h2>Responses</h2>
+        <ul>
+            <li>The API that I selected provides the holidays and their dates of the provided county and year.</li>
+            <li>https://date.nager.at/swagger/index.html</li>
+            <li>I needed to add the type of date I wanted to access, the country for which the dates apply, and the year the date occurs to the API link.</li>
+            <li>This API can be helpful in a calendar application to show when certain dates, like holidays, are in a given year. It can also be used for a planning apllication because it can identify long weekends and holidays.</li>
+        </ul>
+    </body>
+</html>

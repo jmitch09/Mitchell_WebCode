@@ -1,0 +1,207 @@
+<html>
+    <head>
+        <title>Project 2 WOORDLE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            
+            .grid-container{
+                    display: grid;
+                    grid-template-columns: repeat(5, 30px);
+                    grid-template-rows: repeat(6, 40px);
+                    grid-gap: 20px;
+                    text-align: center;
+                }
+
+                .image-box{
+                    border: 1px solid;
+                    padding: 5px;
+                    width: 30px;
+                    height: 40px;
+                    font-size: 30px;
+                    text-align: center;
+                }
+
+                body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+
+            @media screen and (max-width: 600px) {
+                body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            
+        </style>
+
+        <script>
+            var word
+            var lives
+            var freq
+            var boxNm
+            var win
+            var used = {}
+
+            setup()
+                
+            function setup(){
+                play = fetch("https://random-word-api.vercel.app/api?words=1&length=5")
+                    .then(play=>play.text())    
+                    .then(data=>{data = JSON.parse(data) 
+                        console.log(data)
+                        word = data[0]
+                        word = word.toString()
+                        console.log(word)
+                        lives = 6
+                        win = false
+                        boxNm = 1
+                        document.getElementById('reset').style.display = "none"
+                })
+            }             
+            
+            function game(){
+                if (win == true || lives == 0) {
+                    updateScreen(0)
+                    return
+                }
+                document.getElementById('ans').select()
+                lives = lives - 1
+                userAns = document.getElementById('ans')
+                userAns = userAns.value.toString()
+                userAns = userAns.toLowerCase()
+                console.log(userAns)
+                userAns.split("").forEach(element =>{
+                    if (used[element]) {
+                        used[element] += 1
+                    } else {
+                        used[element] = 1
+                    }
+                })
+                if (userAns.length != 5) {
+                    alert("Error: Enter a five letter word.")
+                } else {
+                    checkAns()
+                }
+            }
+
+            function checkAns(){
+                if (userAns == word) {
+                    alert("Correct!")
+                    win = true
+                    updateScreen(1)
+                } else {
+                    if (lives == 0) {
+                        alert("Sorry the answer was " + word)
+                    }
+                    updateScreen(1)
+                }
+            }
+            
+            function updateScreen(state) {
+                if (state == 0) {
+                    used = {}
+                    document.getElementById('used').innerHTML = ""
+                    i = 1
+                    while (i != 31) {
+                        document.getElementById('box' + i).style.backgroundColor = "white"
+                        document.getElementById('box' + i).textContent = ""
+                        i++
+                    }
+                    document.getElementById('ans').value = ""
+                    setup()
+                } else if (state == 1) {
+                    document.getElementById('used').innerHTML = "Used Letters: " + Object.keys(used)
+                    if (lives==0 || win==true) {
+                        boxColor()
+                        document.getElementById('reset').style.display = "block"
+                    } else {
+                        boxColor()
+                    }
+                }
+            }
+
+            function boxColor() {
+                setFreq()    
+                for (i=0; i < 5; i++) {
+                    document.getElementById('box' + boxNm.toString()).textContent = userAns[i]
+                    if (userAns[i] === word[i]) {
+                                document.getElementById('box' + boxNm.toString()).style.backgroundColor = "green"
+                                freq[userAns[i]] = freq[userAns[i]] - 1
+                    }
+                    boxNm += 1
+                }
+                boxNm = boxNm - 5
+                for (i=0;i<5;i++) {
+                    if(document.getElementById('box' + boxNm.toString()).style.backgroundColor == '') {
+                    if (freq[userAns[i]] > 0 && word.indexOf(userAns[i]) !== i) {
+                        document.getElementById('box' + boxNm.toString()).style.backgroundColor = "yellow"
+                        freq[userAns[i]] = freq[userAns[i]] - 1
+                    }
+                  }
+                    boxNm += 1
+                }
+            }
+
+            function setFreq() {
+                freq = {}
+                i = 0
+                word.split("").forEach(element => {
+                    if (freq[word[i]]) {
+                        freq[word[i]] += 1
+                    } else {
+                        freq[word[i]] = 1
+                    }
+                    i += 1
+                });
+            }
+
+            function enter(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault()
+                    document.getElementById("check").click()
+                }
+}
+
+        </script>
+    </head>
+
+
+    <body>
+        <div class="page">
+        <h1>WOORDLE!</h1>
+        
+        <div class="grid-container" style="margin-bottom:20px;" id="grid"></div>      
+        
+        <br>
+
+        <div id="used">&nbsp;</div>
+
+        <br>
+
+        <input style="display: block; margin-left: 37px;" type="text" id="ans"  onkeydown="enter(event)"></input>
+        
+        <br>
+        
+        <button style="display: block; width:80px; margin-left: 80px;" id="check" onclick="game()">Check</button>
+
+        <br>
+
+        <button id="reset" onclick="updateScreen(0)" style="display: none; width:80px; margin-left: 80px;">Reset</button>
+
+        <script>
+            i = 1
+            while (i != 31){
+                box = document.createElement("div")
+                box.classList.add("image-box")
+                box.id = "box" + i
+                document.getElementById('grid').appendChild(box)
+                i += 1
+            }
+        </script>
+        </div>
+    </body>
+</html>
